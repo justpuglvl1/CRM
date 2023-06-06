@@ -1,0 +1,103 @@
+body {
+    background: white;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.work__sheet {
+    display: block;
+    background: #d0d0d0;
+    padding: 20px;
+    /* justify-content: right; */
+    position: fixed;
+    margin-left: 200px;
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.work__cons {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 1000px;
+    height: 150px;
+    color: white;
+    display: flex;
+    position: absolute;
+    vertical-align: top;
+    text-align: center;
+}
+
+.table__content {
+    margin-top: 10px;    
+}
+
+
+
+.table__name {
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    margin-left: 100px;
+    display: flex;
+}
+
+.tabble {
+    background: white;
+    overflow-y: auto;
+    vertical-align: top;
+    text-align: center;
+    display: flex;
+    margin-left: 100px;
+}
+
+.btn_work{
+    display:inline-flex;
+
+}
+
+.btn__click {
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid gray;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+
+.custom-card10 {
+    background-color: #D3D3D3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+    .custom-card15 form {
+        margin-bottom: 0;
+    }
+
+    .custom-card15 .form-label {
+        font-weight: bold;
+    }
+
+    .custom-card15 .form-control {
+        border: 1px solid #A9A9A9;
+        border-radius: 3px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .custom-card15 .btn-primary {
+        background-color: #A9A9A9;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 3px;
+    }
+
+        .custom-card15 .btn-primary:hover {
+            background-color: #696969;
+        }

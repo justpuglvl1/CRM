@@ -1,0 +1,131 @@
+﻿@using CRM.Models;
+@model IEnumerable<Wedo> 
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<header class="header">
+    <div class="conteiner">
+        <div class="header__inner">
+            <div class="header__logo">CRM - проект</div>
+
+            <nav class="nav">
+                <a class="nav__link" asp-controller="Home" asp-action="Index">Главная</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Service">Услуги</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Project">Проекты</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Blog">Блог</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Contact">Контакты</a>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="nav__link" asp-controller="Account" asp-action="Login">Войти</a>
+                }
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="intro__2">
+    <div style="
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom: 60px;">
+
+        <div class="wedo">
+            <div class="wedo__item">
+                <img src="~/css/images/wedo/1.jpg">
+            </div>
+
+            <div class="wedo__item">
+                <div class="acardion">
+                    @*<div class="acardion__item">
+                        <label class="acardion__tittle" for="ac_1">Импортозамещение</label>
+                        <input class="acardion__input" type="checkbox" id="ac_1" />
+                        <div class="ac__text">
+                            <p>
+                                Каждая внедренная ИТ система нуждается в технической поддержке и дальнейшем сопровождении.
+                                Консультации пользователей и администраторов систем, решение инцидентов любой сложности,
+                                исправление ошибок, быстрая реализации небольших запросов на изменение, переход на новые
+                                верси системы, консультации по программночаппаратному обеспечению и многие другие вопросы,
+                                которые возникают в процессе эксплуатации систем оперативно в крилосуточном режиме
+                                решаются сотрудниками выделенного функционального подразделения «Служба технической
+                                "поддержки и сопровождения информационных систем» (СТПИС).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acardion__item">
+                        <label class="acardion__tittle" for="ac_2">Цифровые решения</label>
+                        <input class="acardion__input" type="checkbox" id="ac_2" />
+                        <div class="ac__text">
+                            <p>
+                                Каждая внедренная ИТ система нуждается в технической поддержке и дальнейшем сопровождении.
+                                Консультации пользователей и администраторов систем, решение инцидентов любой сложности,
+                                исправление ошибок, быстрая реализации небольших запросов на изменение, переход на новые
+                                верси системы, консультации по программночаппаратному обеспечению и многие другие вопросы,
+                                которые возникают в процессе эксплуатации систем оперативно в крилосуточном режиме
+                                решаются сотрудниками выделенного функционального подразделения «Служба технической
+                                "поддержки и сопровождения информационных систем» (СТПИС).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acardion__item">
+                        <label class="acardion__tittle" for="ac_3">Аналитика</label>
+                        <input class="acardion__input" type="checkbox" id="ac_3" />
+                        <div class="ac__text">
+                            <p>
+                                Каждая внедренная ИТ система нуждается в технической поддержке и дальнейшем сопровождении.
+                                Консультации пользователей и администраторов систем, решение инцидентов любой сложности,
+                                исправление ошибок, быстрая реализации небольших запросов на изменение, переход на новые
+                                верси системы, консультации по программночаппаратному обеспечению и многие другие вопросы,
+                                которые возникают в процессе эксплуатации систем оперативно в крилосуточном режиме
+                                решаются сотрудниками выделенного функционального подразделения «Служба технической
+                                "поддержки и сопровождения информационных систем» (СТПИС).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acardion__item">
+                        <label class="acardion__tittle" for="ac_4">Техническая поддержка</label>
+                        <input class="acardion__input" type="checkbox" id="ac_4" />
+                        <div class="ac__text">
+                            <p>
+                                Каждая внедренная ИТ система нуждается в технической поддержке и дальнейшем сопровождении.
+                                Консультации пользователей и администраторов систем, решение инцидентов любой сложности,
+                                исправление ошибок, быстрая реализации небольших запросов на изменение, переход на новые
+                                верси системы, консультации по программночаппаратному обеспечению и многие другие вопросы,
+                                которые возникают в процессе эксплуатации систем оперативно в крилосуточном режиме
+                                решаются сотрудниками выделенного функционального подразделения «Служба технической
+                                "поддержки и сопровождения информационных систем» (СТПИС).
+                            </p>
+                        </div>
+                    </div>*@
+                    @foreach(var n in Model)
+                    {
+                        <div class="acardion__item">
+                            <label class="acardion__tittle" for="ac_@n.Id">@n.Name</label>
+                            <input class="acardion__input" type="checkbox" id="ac_@n.Id" />
+                            <div class="ac__text">
+                                <p>
+                                    @n.Text
+                                </p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</section>

@@ -1,0 +1,61 @@
+﻿@using CRM.Models;
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<header class="header">
+    <div class="conteiner">
+        <div class="header__inner">
+            <div class="header__logo">CRM - проект</div>
+
+            <nav class="nav">
+                <a class="nav__link" asp-controller="Home" asp-action="Index">Главная</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Service">Услуги</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Project">Проекты</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Blog">Блог</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Contact">Контакты</a>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="nav__link" asp-controller="Account" asp-action="Login">Войти</a>
+                }
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="section2">
+    <div class="conteiner_1">
+
+        <div class="section_header1">
+        </div>
+
+        <div class="wedo">
+            <div class="wedo__item">
+                <div class="wedo_txt">
+                    <p>
+                        г.Москва ул.Щербаковская д.7
+                    </p>
+                </div>
+
+                <div class="wedo_txt">
+                    <p>
+                        Телефон: + 7 999 918 72 90
+                        e-mail: artem.artem113@mail.ru
+                        Санчаров Артем Олегович
+                    </p>
+                </div>
+            </div>
+
+            <div class="wedo__item">
+                <img src="~/css/images/blog/4.jpg" />
+            </div>
+        </div>
+    </div>
+</section>

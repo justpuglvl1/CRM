@@ -1,0 +1,105 @@
+﻿@using CRM.Models;
+@model IEnumerable<About> 
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<header class="header">
+    <div class="conteiner">
+        <div class="header__inner">
+            <div class="header__logo">CRM - проект</div>
+
+            <nav class="nav">
+                <a class="nav__link" asp-controller="Home" asp-action="Index">Главная</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Service">Услуги</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Project">Проекты</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Blog">Блог</a>
+                <a class="nav__link" asp-controller="Home" asp-action="Contact">Контакты</a>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="nav__link" asp-controller="Account" asp-action="Login">Войти</a>
+                }
+            </nav>
+        </div>
+    </div>
+</header>
+<section class="intro__1">
+    <div class="conteiner__1">
+
+        <div class="section__header">
+            <h3 class="sectio__suptittle">Расширяем возможности</h3>
+            <h2 class="sectio__tittle">Проекты</h2>
+        </div>
+
+        <div class="about">
+
+            @*<div class="about__item">
+                <div class="about__image">
+                    <img src="~/css/images/services/1.jpg">
+                </div>
+                <label class="serv__tittle" for="ac1">Обработка заявок в режиме онлайн</label>
+                <input class="acardion_input" type="checkbox" id="ac1" />
+            </div>
+
+            <div class="about__item">
+                <div class="about__image">
+                    <img src="~/css/images/services/2.jpg">
+                </div>
+                <div class="serv__tittle">Управление кадрами и расчет зарплаты</div>
+            </div>
+
+            <div class="about__item">
+                <div class="about__image">
+                    <img src="~/css/images/services/3.jpg">
+                </div>
+                <div class="serv__tittle">Доработка CRM</div>
+            </div>*@
+
+            @foreach(var a in Model)
+            {
+                <div class="about__item">
+                    <div class="about__image">
+                        @*<img src=@a.Url>*@
+
+                        <img src="~/image/about/@a.Path
+">
+
+                    </div>
+                    <label class="serv__tittle" for="ac1">@a.Text</label>
+                    <input class="acardion_input" type="checkbox" id="ac{@a.Id}" />
+                </div>
+            }
+
+
+
+        </div>
+        <div class="conteiner_2">
+            <p class="conteiner__2">
+                Для реализации проекта была выбрана платформа IВМ Websphere, поскольку входящий в нее инструментарий ВРМ
+                оказался наиболее подходящим для автоматизации уникальных бизнес-процессов заказчика. Дополняющая его
+                система ILOG JRules помогает понятными для пользователей правилами описывать логику принятия решений. Поэтому
+                сочетание этих продуктов позволяет создавать гибкие процедуры обработки заявок и быстро адаптировать их к
+                меняющимся условиям.
+
+                В качестве пилотного проекта был автоматизирован процесс «Управление маркетинговыми коммуникациями», что
+                позволило банку протестировать возможности платформы IВМ ВРМ. На последующих этапах в банке была
+                спроектирована и внедрена полномасштабная система для автоматизации основного бизнес-процесса «Онлайн
+                обработка кредитных заявок».
+
+                Разработка велась по методологии Agile, короткими итерациями продолжительностью 1-2 недели, с постоянным
+                мониторингом прогресса и обсуждением достигнутых результатов. Одновременно проводилось обучение сотрудников
+                банка, которые в дальнейшем стали осуществлять сопровождение и актуализацию системы. Весь проект от
+                ‘обследования бизнес-процессов до внедрения системы в промышленную эксплуатацию занял около 10 месяцев.
+            </p>
+        </div>
+    </div>
+
+
+</section>

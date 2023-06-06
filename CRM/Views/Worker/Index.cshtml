@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Notes>
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style1.css" />
+    <link rel="stylesheet" href="~/css/style2.css" />
+    <link rel="stylesheet" href="~/css/styleWorker.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="gray-header">
+        <div class="header-content">
+            <h10>CRM - проект</h10>
+            <div action="workcons">
+                <div class="btn_work">
+                    <a class="button sort-button" asp-action="Today" asp-controller="Worker"> Сегодня</a>
+                    <a class="button sort-button" asp-action="Yesterday" asp-controller="Worker">Вчера</a>
+                    <a class="button sort-button" asp-action="Week" asp-controller="Worker">Неделя</a>
+                    <a class="button sort-button" asp-action="Month" asp-controller="Worker">Месяц</a>
+                    <form asp-action="Range" asp-controller="Worker">
+                        <label>От</label>
+                        <input type="date" name="1" />
+                        <label>До</label>
+                        <input type="date" name="2" />
+                        <input class="button sort-button" type="submit" value="Показать" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <a class="nav__link1" asp-controller="Worker" asp-action="Index">Рабочий стол</a>
+                <a class="nav__link1" asp-controller="Worker" asp-action="Wedo">Проекты</a>
+                <a class="nav__link1" asp-controller="Worker" asp-action="About">Услуги</a>
+                <a class="nav__link1" asp-controller="Worker" asp-action="Blog">Блог</a>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="work__sheet">
+        <table class="table__content">
+            <tr class="table__name">
+                <th style="width:100px;">Номер заявки</th>
+                <th style="width:150px;">Время заявки</th>
+                <th style="width:200px;">Имя</th>
+                <th style="width:250px;">Текст завявки</th>
+                <th style="width:150px;">Контакты</th>
+                <th style="width:150px;">Статус</th>
+                <th style="width:150px;">Изменить статус</th>
+            </tr>
+            @if (Model != null)
+            {
+                foreach (var note in Model)
+                {
+                    <tr class="tabble">
+                        <th style="width:100px;">@note.Id</th>
+                        <th style="width:150px;">@note.Date</th>
+                        <th style="width:200px;">@note.Name</th>
+                        <th style="width:250px;">@note.Description</th>
+                        <th style="width:150px;">@note.Address</th>
+                        <th style="width:150px;">@note.Iban</th>
+                        <th style="width:150px;">
+                            <div class="button-container-edit">
+                                <a class="button edit-button" asp-action="EditIndex" asp-route-id="@note.Id">Edit</a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            }
+        </table>
+    </section>
+</body>

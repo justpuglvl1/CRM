@@ -1,0 +1,39 @@
+﻿@model CRM.Models.Notes
+
+@{
+    ViewData["Title"] = "Создание пользователя";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style1.css" />
+    <link rel="stylesheet" href="~/css/style2.css" />  
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<div class="intro__10">
+    <div class="conteiner__10">
+        <div class="intro__inner10">
+            <div class="card col-md-12 custom-card">
+                <form asp-action="CreateUser" asp-controller="Home" method="post">
+                    <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
+                    <div class="mb-3">
+                        <label class="form-label">Имя</label>
+                        <input type="text" asp-for="Name" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Текст</label>
+                        <input type="text" asp-for="Description" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Контакты</label>
+                        <input type="text" asp-for="Address" class="form-control" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary float-right" type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
