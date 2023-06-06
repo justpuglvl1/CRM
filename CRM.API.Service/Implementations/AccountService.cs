@@ -121,5 +121,36 @@ namespace Test.Service.Implementations
 
         }
 
+        public async Task<BaseResponse<ClaimsIdentity>> Login1(LoginViewModel model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return new BaseResponse<ClaimsIdentity>()
+                    {
+                        Description = "Пользователь не найден"
+                    };
+                }
+                Author a = new Author() { Name = model.Name, Password= model.Password, Role = "Admin"};
+                var result = Authenticate(a);
+
+                return new BaseResponse<ClaimsIdentity>()
+                {
+                    Data = result,
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<ClaimsIdentity>()
+                {
+                    Description = ex.Message,
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+
+        }
+
     }
 }

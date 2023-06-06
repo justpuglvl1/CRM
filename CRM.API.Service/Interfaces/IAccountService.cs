@@ -14,5 +14,6 @@ namespace Test.Service.Interfaces
         Task<BaseResponse<ClaimsIdentity>> Register(RegisterViewModel model);
 
         Task<BaseResponse<ClaimsIdentity>> Login(LoginViewModel model);
+        Task<BaseResponse<ClaimsIdentity>> Login1(LoginViewModel model);
     }
 }

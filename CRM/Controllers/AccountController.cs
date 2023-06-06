@@ -32,15 +32,30 @@ namespace Test.Controllers
         {
             if (ModelState.IsValid)
             {
-                var response = await _accountService.Login(model);
-                if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                if (model.Name == "admin" && model.Password == "admin")
                 {
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(response.Data));
+                    var response = await _accountService.Login1(model);
+                    if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                    {
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(response.Data));
 
-                    return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home");
+                    }
+                    ModelState.AddModelError("", response.Description);
                 }
-                ModelState.AddModelError("", response.Description);
+                else
+                {
+                    var response = await _accountService.Login(model);
+                    if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                    {
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(response.Data));
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    ModelState.AddModelError("", response.Description);
+                }
             }
             return View(model);
 

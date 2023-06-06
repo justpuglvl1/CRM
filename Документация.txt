@@ -1,0 +1,76 @@
+CRM
+
+* Библиотеки:
+
+Microsoft.AspNetCore.Http.Features 5.0.17 - для работы с http-запросами
+
+Microsoft.EntityFrameworkCore 7.0.5 - Библиотека для работы с базой данных
+
+Microsoft.EntityFrameworkCore.SqlServer 7.0.5 - Библиотека для использования базы данных
+
+Newtonsoft.Json - 13.0.3 - Библиотека для использования Json
+
+Telegram.Bot - 19.0.0 - Библиотека для создания телеграм бота
+
+System.Drawing.Common 7.0.0 - Для работы с картинками
+
+
+* Целевая платформа - .NET6.0
+
+
+*Доступ к панели администратора: 
+
+ссылка: https://localhost:7009/Account/Login
+Логин: admin
+Пароль: admin
+
+
+*API функции:
+
+Статьи блога:
+
+Get-запросы:
+
+https://localhost:7009/Home/Service - страница клиента с услугами
+
+https://localhost:7009/Home/Project - страница клиента с проектами
+
+https://localhost:7009/Home/Index - главная страница клиента
+
+https://localhost:7009/Home/Blog - страница клиента блог
+
+https://localhost:7009/Home/Contact - страница клиента с контактами
+
+https://localhost:7009/Worker - получение всех заявок
+
+https://localhost:7009/Worker/EditIndex/{id} - получение заявки по заданному id
+
+https://localhost:7009/Worker/Wedo - админская страница с проектами
+
+https://localhost:7009/Worker/About - админская страница с услугами
+
+https://localhost:7009/Worker/Blog - админская страница с блогом
+
+https://localhost:7009/Worker/EditBlog/1 - получение блога по заданному id
+
+
+
+Post - запросы:
+
+https://localhost:7009/CreateAbout - добавление\обновление данных в бд
+
+https://localhost:7009/EditWedo/{note} - добавление\обновление данных в бд
+
+https://localhost:7009/CreateWedo/{note} - добавление\обновление данных в бд
+
+https://localhost:7009/CreateBlog/{file}/{blog} - добавление\обновление данных в бд
+
+
+Delete-запросы:
+
+https://localhost:7009/DeleteWedo/{id} - удаление проекта из бд по id
+
+https://localhost:7009/DeleteBlog/{id} - удаление блога из бд по id
+
+https://localhost:7009/DeleteAbout/{id} - удаление услугу из бд по id
+
