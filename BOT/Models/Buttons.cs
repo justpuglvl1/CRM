@@ -11,7 +11,7 @@ namespace BOT.Models
     {
         public static IReplyMarkup? GetButtons()
         {
-            return new ReplyKeyboardMarkup("Хз что тут писать")
+            return new ReplyKeyboardMarkup("")
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {
@@ -23,7 +23,7 @@ namespace BOT.Models
         }
         public static IReplyMarkup? GetButtons1()
         {
-            return new ReplyKeyboardMarkup("Хз что тут писать")
+            return new ReplyKeyboardMarkup("")
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {
@@ -34,7 +34,7 @@ namespace BOT.Models
         }
         public static IReplyMarkup? GetButtons2()
         {
-            return new ReplyKeyboardMarkup("Хз что тут писать")
+            return new ReplyKeyboardMarkup("")
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {

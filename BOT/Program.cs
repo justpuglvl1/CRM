@@ -14,7 +14,7 @@ namespace TelegramBot
 {
     internal class Program
     {
-        private readonly static string token = "6278385115:AAEmjR5chs51SX3OU0-GxfcgcDS7IQ-HzXc";
+        private readonly static string token = "";
         public static TelegramBotClient? client;
 
         static void Main(string[] args)
